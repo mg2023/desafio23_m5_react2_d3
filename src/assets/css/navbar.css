@@ -1,0 +1,18 @@
+.navbar {
+    display: flex;
+    background-color: black;
+    color: white;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;    
+    padding: 0 20px;
+  }
+  
+  .routes > *{
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+
+
+  }
