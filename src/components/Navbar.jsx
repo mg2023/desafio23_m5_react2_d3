@@ -1,19 +1,20 @@
 import "../assets/css/navbar.css";
 import { NavLink } from "react-router-dom";
+import logo from  "../assets/img/gps-pokemon.png"
 
 export default function Navbar() {
 
-  const setActiveClass = ({ isActive }) => (isActive ? "active" : undefined);
+  const setActiveClass = ({ isActive }) => (isActive ? "active" : "disabled");
 
   return (
-    <nav className="navbar">
+    <div className="navbar">
       <div>
-        <NavLink className={setActiveClass} to="/"> Logo </NavLink>
+        <NavLink  to="/"> <img src={logo} width="50" height="50" /> </NavLink>
       </div>
-      <div className="routes">
-        <NavLink className={setActiveClass} to="/pokemones"> Home </NavLink>
+      <div>
+        <NavLink className={setActiveClass} to="/"> Home </NavLink>
         <NavLink className={setActiveClass} to="/pokemones"> Pokemones </NavLink>
       </div>
-    </nav>
+    </div>
   );
 }
