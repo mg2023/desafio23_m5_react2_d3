@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <div className="navbar">
       <div>
-        <NavLink  to="/"> <img src={logo} width="50" height="50" /> </NavLink>
+        <NavLink  to="/"> <img src={logo} width="50" height="50" alt="logo GPS pokemon" /> </NavLink>
       </div>
       <div>
         <NavLink className={setActiveClass} to="/"> Home </NavLink>
