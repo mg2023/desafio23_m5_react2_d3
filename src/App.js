@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 
 import Home from "./views/Home";
 import Pokemones from "./views/Pokemones";
+import Detalle from "./views/Detalle"
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
           <Routes>      
             <Route path="/" element={<Home />} />
             <Route path="/pokemones" element={<Pokemones />} />
-            <Route path="/pokemones/:nombre" element={<Pokemones />} />
+            <Route path="/pokemones/:nombre" element={<Detalle />} />
           </Routes>
         </BrowserRouter>
     </div>
@@ -20,3 +21,7 @@ function App() {
 }
 
 export default App;
+
+
+
+// minuto 59:52
