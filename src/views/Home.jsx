@@ -1,8 +1,11 @@
+import picachu from  "../assets/img/picachu.png"
+import "../assets/css/home.css"
+
 export default function Home() {
   return (
     <div id="Home">
-      <h1>Bienvenido maestro pokemon</h1>
-      <p> Aca se mostrara la foto de pikachu</p>
+      <h1 style={{textAlign: "center"}}>Bienvenido maestro pokemon</h1>
+      <img className="imagen-picachu"  src={picachu} />
     </div>
   );
 }
