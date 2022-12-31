@@ -11,7 +11,7 @@ export default function Navbar() {
       <div>
         <NavLink  to="/"> <img src={logo} width="50" height="50" alt="logo GPS pokemon" /> </NavLink>
       </div>
-      <div>
+      <div className="links">
         <NavLink className={setActiveClass} to="/"> Home </NavLink>
         <NavLink className={setActiveClass} to="/pokemones"> Pokemones </NavLink>
       </div>
