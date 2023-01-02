@@ -1,4 +1,6 @@
 .h1-home {
+  padding-top: 20px;
+  padding-bottom: 20px;
   text-align: center;
 }
 
@@ -7,5 +9,5 @@
     margin: auto;
     padding-left: 80px;
     width: 400px;
-    height: 400px;
+    height: 350px;
   }

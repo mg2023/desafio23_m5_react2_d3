@@ -9,15 +9,18 @@
 
 .links {
  padding-top: 10px;
+ padding-right: 10px;
 
 }
 
 .active {
   color: red;
   text-decoration: none;   
+  padding-right: 5px;
   }
 
 .disabled {
   color: white;
-  text-decoration: none;   
+  text-decoration: none;
+  padding-right: 5px;     
 }
