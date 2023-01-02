@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export default function Pokemones() {
     const endpoint = 'https://pokeapi.co/api/v2/pokemon/'
@@ -31,18 +34,24 @@ export default function Pokemones() {
     };
 
     return (
-        <section className="container">
-            <h1 className="h1-poke">Pokemones</h1>
-            {/* aca queda pendiente hacer una map del listado de pokemones, y al seleccionar uno cargarlo a setPokemonSeleccionado */}
-            <Form.Select aria-label="Default select example" value={pokemonSeleccionado}   onChange={ handleChange } >
-                <option>Selecciona un pokemon</option>{
-                    listadoPokemones.map((pokemon, index) => (
-                        <option key={index} value={pokemon.name} >{pokemon.name}</option>
-                    ))
-                }
-            </Form.Select>
-            {/* Con el button se debe hacer el cambio de vista cuando la persona presione el boton de acuerto al personaje seleccionado */}
-            <Button variant="dark" className="mt-5" onClick={verDetallePokemon}>Ver detalle</Button>
-        </section>
+        <Container>
+            <Row>
+                <Col></Col>
+                <Col xs={6}>
+                    <h1 className="h1-poke">Selecciona un pokemon</h1>
+                    {/* Aca se hace el listado de pokemones que se pueden elejir */}
+                    <Form.Select aria-label="Default select example" value={pokemonSeleccionado} onChange={handleChange} >
+                        <option>Pokemones</option>{
+                            listadoPokemones.map((pokemon, index) => (
+                                <option key={index} value={pokemon.name} >{pokemon.name}</option>
+                            ))
+                        }
+                    </Form.Select>
+                    {/* Aca se hace el cabmio de vista de acuerdo al pokemon selecionado    */}
+                    <Button variant="dark" className="mt-5 button " onClick={verDetallePokemon}>Ver detalle</Button>
+                </Col>
+                <Col></Col>
+            </Row>
+        </Container>
     );
 }
