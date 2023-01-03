@@ -4,6 +4,7 @@ import logo from  "../assets/img/gps-pokemon.png"
 
 export default function Navbar() {
 
+  // Requerimiento n1: Asignar una clase active a la ruta que el usuario consulte usando NavLink (3 Puntos)
   const setActiveClass = ({ isActive }) => (isActive ? "active" : "disabled");
 
   return (

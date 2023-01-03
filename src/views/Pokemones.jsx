@@ -24,6 +24,7 @@ export default function Pokemones() {
         getListadoPokemones()
     }, [])
 
+    // Requerimiento n2: Redireccionar programáticamente al usuario usando el hook useNavigate (4 Puntos)
     const verDetallePokemon = () => {
         navigate(`/pokemones/${pokemonSeleccionado}`)
 
@@ -47,7 +48,7 @@ export default function Pokemones() {
                             ))
                         }
                     </Form.Select>
-                    {/* Aca se hace el cabmio de vista de acuerdo al pokemon selecionado    */}
+                    {/* Aca se hace el cabmio de vista de acuerdo al pokemon selecionado */}
                     <Button variant="dark" className="mt-5 button " onClick={verDetallePokemon}>Ver Detalle</Button>
                 </Col>
                 <Col></Col>
