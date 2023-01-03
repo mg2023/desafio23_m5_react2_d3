@@ -82,10 +82,3 @@ export default function Detalle() {
     }
 }
 
-// {
-//     (!nombre) ?
-//         <p>No hay valor</p> :
-
-//         <div><h1>{nombre}</h1>
-//             {/* <img  src={pokemones} alt="imagen de picachu" /> */}
-//         </
