@@ -48,7 +48,7 @@ export default function Pokemones() {
                         }
                     </Form.Select>
                     {/* Aca se hace el cabmio de vista de acuerdo al pokemon selecionado    */}
-                    <Button variant="dark" className="mt-5 button " onClick={verDetallePokemon}>Ver detalle</Button>
+                    <Button variant="dark" className="mt-5 button " onClick={verDetallePokemon}>Ver Detalle</Button>
                 </Col>
                 <Col></Col>
             </Row>
