@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
+import "../assets/css/detalle.css"
+import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import "../assets/css/detalle.css"
-import Button from 'react-bootstrap/Button';
-import { useNavigate } from "react-router";
+
 
 export default function Detalle() {
     const endpoint = 'https://pokeapi.co/api/v2/pokemon/'
@@ -16,35 +16,32 @@ export default function Detalle() {
     const navigate = useNavigate();
     const [InfoPokemon, setInfoPokemon] = useState([])
 
-    console.log(" funcion Detalle")
     const getInfoPokemon = async () => {
         const response = await fetch(endpoint + nombre)
-        const { sprites, stats, types } = await response.json()
-        setInfoPokemon({ sprites, stats, types })
-        console.log("api")
-
-        // crear una arrglo con el stat y la img
+        console.log(response.status)
+        if (response.status === 200) {
+            const { sprites, stats, types } = await response.json()
+            setInfoPokemon({ sprites, stats, types })
+        } else {
+            navigate(`*`)
+        }
     }
 
-
-    // en stats estan HTMLParagraphElement, attack, defese, etc.
+    // en stats estan hp, attack,defense, special-attack, special-defense y speed
+    // en sprites.other.dream_world.front_default esta la imagen del pokemon
     useEffect(() => {
         getInfoPokemon()
+        // eslint-disable-next-line
     }, [])
-
 
     // Requerimiento n2: Redireccionar programáticamente al usuario usando el hook useNavigate (4 Puntos)
     const volverABuscar = () => {
         navigate(`/pokemones/`)
-
     }
-
-    console.log(InfoPokemon)
 
     if (InfoPokemon.length !== 0) {
         return (
             <Container className="poke-card">
-                {/* <Card style={{ width: '24rem' }}> */}
                 <Card>
                     <Row>
                         <Col className="poke-img" >
@@ -77,7 +74,8 @@ export default function Detalle() {
     }
     else {
         return (
-            <div></div>
+            <>
+            </>
         )
     }
 }
