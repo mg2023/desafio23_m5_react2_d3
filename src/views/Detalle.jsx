@@ -30,9 +30,8 @@ export default function Detalle() {
     // en stats estan hp, attack,defense, special-attack, special-defense y speed
     // en sprites.other.dream_world.front_default esta la imagen del pokemon
     useEffect(() => {
-        getInfoPokemon()
-        // eslint-disable-next-line
-    }, [])
+        getInfoPokemon()        
+    })
 
     // Requerimiento n2: Redireccionar programáticamente al usuario usando el hook useNavigate (4 Puntos)
     const volverABuscar = () => {
